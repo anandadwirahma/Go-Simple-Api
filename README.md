@@ -2,7 +2,7 @@
 Simple Api With Golang
 
 
-Query Create Table :
+- Query Create Table :
 
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -10,7 +10,7 @@ CREATE TABLE `mahasiswa` (
   `phone` varchar(45) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-  ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 
 - Endpoint :
@@ -30,7 +30,7 @@ CREATE TABLE `mahasiswa` (
         raw body :
         {
             "id" : 2,
-            "name" : "fifi",
+            "name" : "ethant",
             "phone" : "123456789",
-            "address": "sukun pondok indah bandung"
+            "address": "New YOrk City America"
         }
