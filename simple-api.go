@@ -20,16 +20,18 @@ type DataStudent struct {
 
 func getMahasiswa(w http.ResponseWriter, r *http.Request) {
 	//-- Set Database Connection --\\
-	db, err := sql.Open("mysql", "root:ananda123@/test")
+	db, err := sql.Open("mysql", "user:password@/db")
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
 
+	//-- Query set select data
 	rows, err := db.Query("SELECT * FROM mahasiswa")
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
 
+	//-- Retrieve data
 	for rows.Next() {
 		var id int64
 		var name string
@@ -55,7 +57,7 @@ func getMahasiswa(w http.ResponseWriter, r *http.Request) {
 
 func insertMahasiswa(w http.ResponseWriter, r *http.Request) {
 	//-- Set Database Connection --\\
-	db, err := sql.Open("mysql", "root:ananda123@/test")
+	db, err := sql.Open("mysql", "user:password@/db")
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
@@ -74,7 +76,7 @@ func insertMahasiswa(w http.ResponseWriter, r *http.Request) {
 		Phone := data.Phone
 		Address := data.Address
 
-		//-- Insert data
+		//-- Query set insert data
 		stmt, err := db.Prepare("INSERT INTO mahasiswa (name,phone,address) VALUES (?,?,?)")
 		if err != nil {
 			fmt.Printf("%s", err.Error())
@@ -104,7 +106,7 @@ func insertMahasiswa(w http.ResponseWriter, r *http.Request) {
 
 func updateMahasiswa(w http.ResponseWriter, r *http.Request) {
 	//-- Set Database Connection --\\
-	db, err := sql.Open("mysql", "root:ananda123@/test")
+	db, err := sql.Open("mysql", "user:password@/db")
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
