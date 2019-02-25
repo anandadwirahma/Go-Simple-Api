@@ -3,7 +3,7 @@ Simple Api With Golang
 
 
 ==================
-Query Create Table 
+Query Create Table
 ==================
 
 CREATE TABLE `mahasiswa` (
